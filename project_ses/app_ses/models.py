@@ -3,7 +3,7 @@ from datetime import datetime
 
 # Create your models here.
 class Appuser(models.Model):
-    full_name=models.CharField(models)
+    full_name=models.CharField(max_length=200)
     contact=models.CharField(max_length=100)
     email=models.EmailField(unique=True)
     usertype=models.CharField(max_length=100)
@@ -34,7 +34,7 @@ class Student(models.Model):
     intake= models.CharField(max_length=200,null=True,blank=True)
     shift= models.CharField(max_length=200)
     remarks=models.CharField(max_length=200)
-    visited_at=models.DateTimeField(deafult=datetime.now())
+    visited_at=models.DateTimeField(default=datetime.now())
 
     class Meta:
         db_table="app_students"
